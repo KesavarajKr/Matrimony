@@ -112,7 +112,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                    
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :1),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
@@ -151,7 +151,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                    
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :1),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
@@ -272,7 +272,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                    ),
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :1),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
@@ -310,7 +310,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                    ),
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :1),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
@@ -348,7 +348,7 @@ class _BasicDetailsState extends State<BasicDetails> {
                    ),
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :1),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),

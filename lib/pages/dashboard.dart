@@ -8,6 +8,7 @@ import 'package:flutter/rendering.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:varan_matrimony/pages/custom_widget.dart';
 import 'package:varan_matrimony/pages/profile_completeness.dart';
+import 'package:varan_matrimony/pages/view_profile.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
@@ -30,11 +31,11 @@ class _DashboardState extends State<Dashboard> {
       if(_selectedIndex == 3)
       {
         _openEndDrawer();
-        print("Open End Drawer");
+        
       }
       else
       {
-        print("End Drawer Not Open");
+        
       }
     });
   }
@@ -141,7 +142,14 @@ void _closeEndDrawer() {
                       title:Text('My Account',style:TextStyle(fontWeight:FontWeight.bold)),
                       leading: Icon(Icons.mail,color:HexColor('6d1140')),
                                   ),
-                                  onTap:(){print("Working");},
+                                  onTap:(){
+                                    
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => ViewProfile())
+                                    );
+
+                                    },
                     ),
                   Divider(
                     height:0.1
@@ -246,52 +254,22 @@ void _closeEndDrawer() {
       // Disable opening the end drawer with a swipe gesture.
      
         drawer: Drawer(
-          backgroundColor: HexColor('6D1140'),
+          
           elevation: 16.0,
           child:Column(
             children: <Widget>[
-               UserAccountsDrawerHeader(
-                accountName: Text('Kesavaraj'),
-                accountEmail: Text('kesavaraj@saitechnosolutions.net'),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: HexColor('6D1140'),
-                ),
-                ),
-               ListTile(
-                title:Text('All Inbox'),
-                leading: Icon(Icons.mail),
-              ),
-              Divider(
-                height:0.1
-              ),
-              ListTile(
-                title:Text('All Inbox'),
-                leading: Icon(Icons.mail),
-              ),
-              Divider(
-                height:0.1
-              ),
-              ListTile(
-                title:Text('All Inbox'),
-                leading: Icon(Icons.mail),
-              ),
-              Divider(
-                height:0.1
-              ),
-              ListTile(
-                title:Text('All Inbox'),
-                leading: Icon(Icons.mail),
-              ),
-              Divider(
-                height:0.1
-              ),ListTile(
-                title:Text('All Inbox'),
-                leading: Icon(Icons.mail),
-              ),
-              Divider(
-                height:0.1
-              ),
-
+              
+               Container(
+                 
+                 
+                 height:120,
+                 color:HexColor('6d1140'),
+                  child:
+                  Image(
+                //  image:AssetImage('assets/LOGO_for App.PNG')
+                   image: AssetImage('assets/LOGO_for_App.png'),
+                   ),
+               ),
             ],
             )
         ),
@@ -413,7 +391,7 @@ void _closeEndDrawer() {
                                   overflow: Overflow.visible,
                                   children: [
                                     Container(
-                                      height: 180,
+                                      height: 230,
                                       width: 160,
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -505,7 +483,7 @@ void _closeEndDrawer() {
                                              margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                              child: Row(
                                                children: [
-                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                  IconButton(
                                                    onPressed: () {}, 
                                                    icon: Icon(Icons.favorite),
@@ -687,7 +665,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -888,7 +866,7 @@ void _closeEndDrawer() {
                                              margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                              child: Row(
                                                children: [
-                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                  IconButton(
                                                    onPressed: () {}, 
                                                    icon: Icon(Icons.favorite),
@@ -1277,7 +1255,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1424,7 +1402,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1577,7 +1555,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1724,7 +1702,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1931,7 +1909,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2078,7 +2056,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2231,7 +2209,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2378,7 +2356,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2623,7 +2601,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2770,7 +2748,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2923,7 +2901,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -3070,7 +3048,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 10.0, bottomPadding: 5.0, rightPadding: 10.0, topPadding: 5.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
