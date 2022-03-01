@@ -32,6 +32,7 @@ class _LocationDetailsState extends State<LocationDetails> {
         
         title:Text('Location Information'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: RoundedRectangleBorder(
               
@@ -105,7 +106,7 @@ class _LocationDetailsState extends State<LocationDetails> {
                      ),
                      Container(
                        margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                       padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                       padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                        decoration: BoxDecoration(
                          color:HexColor('dbd2e9'),
                          borderRadius: BorderRadius.circular(50),
@@ -142,7 +143,7 @@ class _LocationDetailsState extends State<LocationDetails> {
                      ),
                      Container(
                        margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                       padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                       padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                        decoration: BoxDecoration(
                          color:HexColor('dbd2e9'),
                          borderRadius: BorderRadius.circular(50),
@@ -179,7 +180,7 @@ class _LocationDetailsState extends State<LocationDetails> {
                      ),
                      Container(
                        margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                       padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                       padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                        decoration: BoxDecoration(
                          color:HexColor('dbd2e9'),
                          borderRadius: BorderRadius.circular(50),
@@ -216,7 +217,7 @@ class _LocationDetailsState extends State<LocationDetails> {
                      ),
                      Container(
                        margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                       padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                       padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                        decoration: BoxDecoration(
                          color:HexColor('dbd2e9'),
                          borderRadius: BorderRadius.circular(50),

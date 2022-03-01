@@ -1,13 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
 // import 'dart:html';
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:varan_matrimony/pages/custom_widget.dart';
 import 'package:varan_matrimony/pages/profile_completeness.dart';
+import 'package:varan_matrimony/pages/search_page.dart';
 import 'package:varan_matrimony/pages/view_profile.dart';
 
 class Dashboard extends StatefulWidget {
@@ -66,10 +67,13 @@ void _closeEndDrawer() {
           title: Image.asset('assets/LOGO_for_App.png'),
            actions: [
             IconButton(onPressed: (){
-              print('Button Clicked');
+              Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => SearchResult())
+                                    );
             }, icon: Icon(Icons.search)),
             IconButton(onPressed: (){
-              print('Button Clicked');
+               
             }, icon: Icon(Icons.notifications)),
             IconButton(onPressed: (){
               print('Button Clicked');
@@ -408,7 +412,7 @@ void _closeEndDrawer() {
                                           Container(
                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                             child:
-                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                           ),
                                           SizedBox(
                                             height: 5.0,
@@ -416,7 +420,7 @@ void _closeEndDrawer() {
                                            Container(
                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                             child:
-                                            Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                           ),
                                           SizedBox(
                                             height: 5.0,
@@ -430,21 +434,21 @@ void _closeEndDrawer() {
                                                    children: [
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                             height: 3.0,
                                           ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                             height: 3.0,
                                           ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      )
                                                    ],
                                                  ),
@@ -454,21 +458,21 @@ void _closeEndDrawer() {
                                                     children: [
                                                       Container(
                                                         margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                  SizedBox(
                                             height: 3.0,
                                           ),
                                                  Container(
                                                    margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                  SizedBox(
                                             height: 3.0,
                                           ),
                                                  Container(
                                                    margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                     ],
                                                   ),
@@ -483,7 +487,7 @@ void _closeEndDrawer() {
                                              margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                              child: Row(
                                                children: [
-                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                  IconButton(
                                                    onPressed: () {}, 
                                                    icon: Icon(Icons.favorite),
@@ -791,7 +795,7 @@ void _closeEndDrawer() {
                                           Container(
                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                             child:
-                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                           ),
                                           SizedBox(
                                             height: 5.0,
@@ -799,7 +803,7 @@ void _closeEndDrawer() {
                                            Container(
                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                             child:
-                                            Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                           ),
                                           SizedBox(
                                             height: 5.0,
@@ -813,21 +817,21 @@ void _closeEndDrawer() {
                                                    children: [
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                             height: 3.0,
                                           ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                             height: 3.0,
                                           ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      )
                                                    ],
                                                  ),
@@ -837,21 +841,21 @@ void _closeEndDrawer() {
                                                     children: [
                                                       Container(
                                                         margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                  SizedBox(
                                             height: 3.0,
                                           ),
                                                  Container(
                                                    margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                  SizedBox(
                                             height: 3.0,
                                           ),
                                                  Container(
                                                    margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                     ],
                                                   ),
@@ -866,7 +870,7 @@ void _closeEndDrawer() {
                                              margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                              child: Row(
                                                children: [
-                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                  IconButton(
                                                    onPressed: () {}, 
                                                    icon: Icon(Icons.favorite),
@@ -1180,7 +1184,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1188,7 +1192,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1202,21 +1206,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -1226,21 +1230,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -1255,7 +1259,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1327,7 +1331,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1335,7 +1339,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1349,21 +1353,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -1373,21 +1377,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -1402,7 +1406,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1480,7 +1484,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1488,7 +1492,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1502,21 +1506,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -1526,21 +1530,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -1555,7 +1559,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1627,7 +1631,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1635,7 +1639,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1649,21 +1653,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -1673,21 +1677,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -1702,7 +1706,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1834,7 +1838,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1842,7 +1846,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1856,21 +1860,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -1880,21 +1884,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -1909,7 +1913,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -1981,7 +1985,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -1989,7 +1993,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -2003,21 +2007,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -2027,21 +2031,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -2056,7 +2060,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2134,7 +2138,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -2142,7 +2146,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -2156,21 +2160,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -2180,21 +2184,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -2209,7 +2213,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),
@@ -2281,7 +2285,7 @@ void _closeEndDrawer() {
                                               Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
+                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -2289,7 +2293,7 @@ void _closeEndDrawer() {
                                                Container(
                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                 child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
+                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
                                               ),
                                               SizedBox(
                                                 height: 5.0,
@@ -2303,21 +2307,21 @@ void _closeEndDrawer() {
                                                        children: [
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          ),
                                                          SizedBox(
                                                 height: 3.0,
                                               ),
                                                          Container(
                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                          )
                                                        ],
                                                      ),
@@ -2327,21 +2331,21 @@ void _closeEndDrawer() {
                                                         children: [
                                                           Container(
                                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                                 height: 3.0,
                                               ),
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
+                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                         ],
                                                       ),
@@ -2356,7 +2360,7 @@ void _closeEndDrawer() {
                                                  margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                  child: Row(
                                                    children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
                                                      IconButton(
                                                        onPressed: () {}, 
                                                        icon: Icon(Icons.favorite),

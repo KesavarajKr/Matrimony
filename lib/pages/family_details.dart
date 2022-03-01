@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -20,6 +20,7 @@ class _FamilyDetailsState extends State<FamilyDetails> {
         
         title:Text('Family Information'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: RoundedRectangleBorder(
               
@@ -47,7 +48,7 @@ class _FamilyDetailsState extends State<FamilyDetails> {
                 height: 280,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                                   borderRadius: BorderRadius.circular(50),
+                                   borderRadius: BorderRadius.circular(10),
                                    border:Border.all(color:HexColor('DFA7B2'),width:1)
                                  ),
                                  child: 
@@ -149,7 +150,7 @@ class _FamilyDetailsState extends State<FamilyDetails> {
                 height: 280,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                                   borderRadius: BorderRadius.circular(50),
+                                   borderRadius: BorderRadius.circular(10),
                                    border:Border.all(color:HexColor('DFA7B2'),width:1)
                                  ),
                                  child: 
@@ -251,7 +252,7 @@ class _FamilyDetailsState extends State<FamilyDetails> {
                 height: 580,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                                   borderRadius: BorderRadius.circular(50),
+                                   borderRadius: BorderRadius.circular(10),
                                    border:Border.all(color:HexColor('DFA7B2'),width:1)
                                  ),
                                  child: 

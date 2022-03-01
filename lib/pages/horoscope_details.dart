@@ -46,6 +46,7 @@ class _HoroscopeDetailsState extends State<HoroscopeDetails> {
         appBar: AppBar(
         title:Text('Horoscope Details'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: RoundedRectangleBorder(
               

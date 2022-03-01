@@ -38,6 +38,7 @@ class _BasicDetailsState extends State<BasicDetails> {
       appBar: AppBar(
         title:Text('Basic Details'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: RoundedRectangleBorder(
               

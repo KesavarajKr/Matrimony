@@ -41,6 +41,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
         
         title:const Text('Professional Information'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: const RoundedRectangleBorder(
               
@@ -73,7 +74,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        ),
                         Container(
                          margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),
@@ -151,7 +152,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        ),
                        Container(
                          margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),
@@ -229,7 +230,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        ),
                        Container(
                          margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),
@@ -266,7 +267,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        ),
                        Container(
                          margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),
@@ -303,7 +304,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        ),
                         Container(
                          margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),
@@ -340,7 +341,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        ),
                        Container(
                          margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),
@@ -374,7 +375,7 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Job Location Address (Specify if Country Not India))',style:TextStyle(fontWeight: FontWeight.bold)),
+                            Text('Job Location Address (Specify if Country Not India)',style:TextStyle(fontWeight: FontWeight.bold)),
                             Container(
               margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 0.0),
               child: Text('Type Here')),
@@ -406,8 +407,8 @@ class ProfessionalInfoState extends State<ProfessionalInfo> {
                        )
                      ),
                      Container(
-                         margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                         padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                         margin:EdgeInsets.fromLTRB(10, 10, 10, 10),
+                         padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                          decoration: BoxDecoration(
                            color:HexColor('dbd2e9'),
                            borderRadius: BorderRadius.circular(50),

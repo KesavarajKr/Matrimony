@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -60,12 +60,13 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
         
         title:const Text('Partner Preference'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: const RoundedRectangleBorder(
               
                     borderRadius: BorderRadius.only(
-                      bottomLeft:Radius.circular(30),
-                          bottomRight:Radius.circular(30),
+                      bottomLeft:Radius.circular(10),
+                          bottomRight:Radius.circular(10),
                     )),
                     
       ),
@@ -87,7 +88,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                   height: 600,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(50),
+                                     borderRadius: BorderRadius.circular(10),
                                      border:Border.all(color:HexColor('DFA7B2'),width:1)
                                    ),
                                    child: 
@@ -97,7 +98,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
                                            SizedBox(
-                                             width: 180,
+                                             width: 150,
 
                                              child: Column(
                                                children: [
@@ -147,7 +148,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                                              ),
                                            ),
                                            SizedBox(
-                                             width: 200,
+                                             width: 150,
 
                                              child: Column(
                                                children: [
@@ -204,7 +205,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
                                            SizedBox(
-                                             width: 180,
+                                             width: 150,
 
                                              child: Column(
                                                children: [
@@ -266,7 +267,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                                              ),
                                            ),
                                           SizedBox(
-                                             width: 180,
+                                             width: 150,
                                               
                                              child: Column(
                                                children: [
@@ -425,7 +426,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                      padding: EdgeInsets.symmetric(horizontal: 4,vertical :1),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
-                       borderRadius: BorderRadius.circular(50),
+                       borderRadius: BorderRadius.circular(10),
                        border:Border.all(color:HexColor('DFA7B2'),width:0.2)
                      ),
                      child: DropdownButtonHideUnderline(
@@ -457,7 +458,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                   height: 460,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(50),
+                                     borderRadius: BorderRadius.circular(10),
                                      border:Border.all(color:HexColor('DFA7B2'),width:1)
                                    ),
                                    child: 
@@ -637,7 +638,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                   height: 370,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(50),
+                                     borderRadius: BorderRadius.circular(10),
                                      border:Border.all(color:HexColor('DFA7B2'),width:1)
                                    ),
                                    child: 
@@ -772,7 +773,7 @@ class _PartnerPreferenceState extends State<PartnerPreference> {
                   height: 500,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(50),
+                                     borderRadius: BorderRadius.circular(10),
                                      border:Border.all(color:HexColor('DFA7B2'),width:1)
                                    ),
                                    child: 

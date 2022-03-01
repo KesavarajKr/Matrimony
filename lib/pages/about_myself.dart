@@ -19,6 +19,7 @@ class _AboutMyselfState extends State<AboutMyself> {
         
         title:Text('About Myself'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: RoundedRectangleBorder(
               
@@ -57,7 +58,7 @@ class _AboutMyselfState extends State<AboutMyself> {
                 children: [
                   Buttons(btnText: 'Cancel', onBtnPressed: (){}, LeftPadding: 25.0, bottomPadding: 10.0, rightPadding: 25.0, topPadding: 10.0, colorOne: 'c6a972', colorTwo: 'a8803b', btnTextColor: '000000', fontsize: 18.0),
                   Buttons(btnText: 'Save', onBtnPressed: (){}, LeftPadding: 25.0, bottomPadding: 10.0, rightPadding: 25.0, topPadding: 10.0, colorOne: '6a1140', colorTwo: '6a1140', btnTextColor: 'ffffff', fontsize: 18.0),
-                  Text('4/180 Words Only Allowed',style: TextStyle(color:Colors.grey),)
+                  Text('4/180 Words',style: TextStyle(color:Colors.grey),)
                 ],
               ),
             )

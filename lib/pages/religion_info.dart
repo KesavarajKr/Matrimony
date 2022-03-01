@@ -29,6 +29,7 @@ class _ReligionInfoState extends State<ReligionInfo> {
         
         title:Text('Religion Information'),
         toolbarHeight: 100.0,
+        centerTitle: true,
         backgroundColor: HexColor('6d1140'),
          shape: RoundedRectangleBorder(
               
@@ -60,7 +61,7 @@ class _ReligionInfoState extends State<ReligionInfo> {
                    ),
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
@@ -97,7 +98,7 @@ class _ReligionInfoState extends State<ReligionInfo> {
                    ),
                    Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 10),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
@@ -134,7 +135,7 @@ class _ReligionInfoState extends State<ReligionInfo> {
                    ),
                     Container(
                      margin:EdgeInsets.fromLTRB(15, 10, 15, 30),
-                     padding: EdgeInsets.symmetric(horizontal: 8,vertical :4),
+                     padding: EdgeInsets.symmetric(horizontal: 4,vertical :2),
                      decoration: BoxDecoration(
                        color:HexColor('dbd2e9'),
                        borderRadius: BorderRadius.circular(50),
