@@ -11,6 +11,8 @@ import 'package:varan_matrimony/pages/profile_completeness.dart';
 import 'package:varan_matrimony/pages/search_page.dart';
 import 'package:varan_matrimony/pages/view_profile.dart';
 
+import 'notification.dart';
+
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
 
@@ -52,17 +54,19 @@ void _closeEndDrawer() {
   Widget build(BuildContext context) {
     
     return Scaffold(
+      extendBodyBehindAppBar: true,
         key: _scaffoldKey,
+        
         appBar: AppBar(
-                
-          backgroundColor: HexColor('6d1140'),
+          backgroundColor: Colors.transparent,
+          elevation:0.0,
           toolbarHeight: 100.0,
           
           shape: RoundedRectangleBorder(
               
                     borderRadius: BorderRadius.only(
-                      bottomLeft:Radius.circular(30),
-                          bottomRight:Radius.circular(30),
+                      bottomLeft:Radius.circular(0),
+                          bottomRight:Radius.circular(0),
                     )),
           title: Image.asset('assets/LOGO_for_App.png'),
            actions: [
@@ -76,10 +80,24 @@ void _closeEndDrawer() {
                
             }, icon: Icon(Icons.notifications)),
             IconButton(onPressed: (){
-              print('Button Clicked');
+               Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => SearchResult())
+                                    );
             }, icon: Icon(Icons.account_circle))
           ],
-          
+          flexibleSpace: Container(
+            
+            decoration: BoxDecoration(
+              color:HexColor('6d1140'),
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                // gradient: LinearGradient(
+                //     colors: [Colors.red,Colors.pink],
+                //     begin: Alignment.bottomCenter,
+                //     end: Alignment.topCenter
+                // )
+            ),
+          ),
         ),
         endDrawer: SafeArea(
           child: Drawer(
@@ -163,7 +181,12 @@ void _closeEndDrawer() {
                       title:Text('Notification',style:TextStyle(fontWeight:FontWeight.bold)),
                       leading: Icon(Icons.notifications,color:HexColor('6d1140')),
                                   ),
-                                  onTap:(){print("Working");},
+                                  onTap:(){
+                                     Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => Notifications())
+                                    );
+                                    },
                     ),
                   Divider(
                     height:0.1
@@ -297,19 +320,19 @@ void _closeEndDrawer() {
                       child: Column(
                         
                         children: [
-                          
+                          SizedBox(height:100),
                           Row(
                             
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                child: Text("125 New Mathches",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0)),
+                                child: Text("125 New Matches",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0)),
                               ),
                               Container(
                                 child:
          
         IconButton(
-                icon: const Icon(Icons.arrow_right),
+                icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.black,
                 onPressed: () {
                   showDialog<String>(
@@ -372,20 +395,21 @@ void _closeEndDrawer() {
                               )
                             ],
                           ),
+                          
                         SizedBox(
                           height:250,
                           child: ListView.builder(
                             itemCount: 10, 
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (BuildContext context, index)=>Container(
-                                height: 180,
+                                height: 140,
                                 width: 160,
                                 
                                 margin:EdgeInsets.all(15),
                                 child: Center(
                                   child:  Card(
                                     elevation: 10.0,
-                                margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
+                                margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                                 shape: RoundedRectangleBorder(
                                         side: BorderSide(color: Colors.transparent, ),
                             borderRadius: BorderRadius.circular(10),
@@ -395,7 +419,7 @@ void _closeEndDrawer() {
                                   overflow: Overflow.visible,
                                   children: [
                                     Container(
-                                      height: 230,
+                                      height: 170,
                                       width: 160,
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -432,16 +456,10 @@ void _closeEndDrawer() {
                                                    mainAxisAlignment: MainAxisAlignment.start,
                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
+                                                    
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                            height: 3.0,
-                                          ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                             height: 3.0,
@@ -458,18 +476,12 @@ void _closeEndDrawer() {
                                                     children: [
                                                       Container(
                                                         margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                  SizedBox(
                                             height: 3.0,
                                           ),
-                                                 Container(
-                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                 ),
-                                                 SizedBox(
-                                            height: 3.0,
-                                          ),
+                                                
                                                  Container(
                                                    margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                        child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
@@ -570,144 +582,132 @@ void _closeEndDrawer() {
                                     margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
                                     shape: RoundedRectangleBorder(
                                             side: BorderSide(color: Colors.transparent, ),
-                                borderRadius: BorderRadius.circular(18),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                                     child: Stack(
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
-                              borderRadius: BorderRadius.circular(50),
-                              
-                              child: Image(
-                              image: AssetImage('assets/profile1.jpg'),
-                              ),
-                              
-                              ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
+                          borderRadius: BorderRadius.circular(50),
+                          
+                          child: Image(
+                          image: AssetImage('assets/profile1.jpg'),
+                          ),
+                          
+                          ),
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -765,7 +765,7 @@ void _closeEndDrawer() {
                                 child: Center(
                                   child:  Card(
                                     elevation: 10.0,
-                                margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
+                                margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                                 shape: RoundedRectangleBorder(
                                         side: BorderSide(color: Colors.transparent, ),
                             borderRadius: BorderRadius.circular(10),
@@ -775,11 +775,10 @@ void _closeEndDrawer() {
                                 child: Stack(
                                   
                                   overflow: Overflow.visible,
-                                  children: [
+                                  children:[
                                     Container(
-                                      height: 180,
+                                      height: 170,
                                       width: 160,
-                                      
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -815,16 +814,10 @@ void _closeEndDrawer() {
                                                    mainAxisAlignment: MainAxisAlignment.start,
                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
+                                                    
                                                      Container(
                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                            height: 3.0,
-                                          ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                      ),
                                                      SizedBox(
                                             height: 3.0,
@@ -841,18 +834,12 @@ void _closeEndDrawer() {
                                                     children: [
                                                       Container(
                                                         margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
                                                  ),
                                                  SizedBox(
                                             height: 3.0,
                                           ),
-                                                 Container(
-                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                       child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                 ),
-                                                 SizedBox(
-                                            height: 3.0,
-                                          ),
+                                                
                                                  Container(
                                                    margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                                                        child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
@@ -1129,7 +1116,7 @@ void _closeEndDrawer() {
                                     child:
          
         IconButton(
-                icon: const Icon(Icons.arrow_right),
+                icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.black,
                 onPressed: () {},
                 
@@ -1166,124 +1153,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -1291,13 +1266,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -1313,124 +1288,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -1438,13 +1401,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -1466,124 +1429,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -1591,13 +1542,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -1613,124 +1564,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -1738,13 +1677,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -1783,7 +1722,7 @@ void _closeEndDrawer() {
                                     child:
          
         IconButton(
-                icon: const Icon(Icons.arrow_right),
+                icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.black,
                 onPressed: () {},
                 
@@ -1820,124 +1759,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -1945,13 +1872,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -1967,124 +1894,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -2092,13 +2007,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -2120,124 +2035,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -2245,13 +2148,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -2267,124 +2170,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -2392,13 +2283,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -2475,7 +2366,7 @@ void _closeEndDrawer() {
                                     child:
          
         IconButton(
-                icon: const Icon(Icons.arrow_right),
+                icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.black,
                 onPressed: () {},
                 
@@ -2512,124 +2403,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -2637,13 +2516,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -2659,124 +2538,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -2784,13 +2651,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -2812,124 +2679,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -2937,13 +2792,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),
@@ -2959,124 +2814,112 @@ void _closeEndDrawer() {
                                       
                                       overflow: Overflow.visible,
                                       children: [
-                                        Container(
-                                          height: 180,
-                                          width: 160,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                                            children: [
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                child:
-                                                Text("Occupation",style:TextStyle(fontSize:15.0,color:Colors.black)),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                               Container(
-                                                 child:Row(
+                                    Container(
+                                      height: 170,
+                                      width: 160,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: [
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("23 Years",style:TextStyle(fontSize:15.0,color:HexColor('6D1140'))),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Bride Name",style:TextStyle(fontWeight: FontWeight.bold,fontSize:15.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                            child:
+                                            Text("Occupation",style:TextStyle(fontSize:13.0,color:Colors.black)),
+                                          ),
+                                          SizedBox(
+                                            height: 5.0,
+                                          ),
+                                           Container(
+                                             child:Row(
+                                               children: [
+                                                 Column(
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     Column(
-                                                       mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                       children: [
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Education",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Location",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         ),
-                                                         SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                         Container(
-                                                           margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Subcaste",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                         )
-                                                       ],
-                                                     ),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                            margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("BE",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("Coimbatore",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                     SizedBox(
-                                                height: 3.0,
-                                              ),
-                                                     Container(
-                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                           child:Text("XXXXX",style:TextStyle(fontSize:12.0,color:Colors.black)),
-                                                     ),
-                                                        ],
-                                                      ),
                                                     
-                                                   ],
-                                                 )
-                                               ),
-                                               SizedBox(
-                                                 height: 3.0,
-                                               ),
-                                               Container(
-                                                 margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                                                 child: Row(
-                                                   children: [
-                                                     Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 8.0, rightPadding: 13.0, topPadding: 8.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
-                                                     IconButton(
-                                                       onPressed: () {}, 
-                                                       icon: Icon(Icons.favorite),
-                                                       color: Colors.red,
-                                                       ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("ID Number",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     ),
+                                                     SizedBox(
+                                            height: 3.0,
+                                          ),
+                                                     Container(
+                                                       margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("Subcaste",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                     )
                                                    ],
                                                  ),
-                                               )
-                                              
-                                              
-                                              
-                                               
-                                            ],
+                                                  Column(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Container(
+                                                        margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("9997452",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                 SizedBox(
+                                            height: 3.0,
                                           ),
+                                                
+                                                 Container(
+                                                   margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                                       child:Text("XXXXX",style:TextStyle(fontSize:10.0,color:Colors.black)),
+                                                 ),
+                                                    ],
+                                                  ),
+                                                
+                                               ],
+                                             )
+                                           ),
+                                           SizedBox(
+                                             height: 3.0,
+                                           ),
+                                           Container(
+                                             margin:EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                                             child: Row(
+                                               children: [
+                                                 Buttons(btnText: 'View Profile', onBtnPressed: (){}, LeftPadding: 13.0, bottomPadding: 10.0, rightPadding: 13.0, topPadding: 10.0, colorOne: '6D1140', colorTwo: '6D1140', btnTextColor: 'FFFFFF',fontsize: 12.0),
+                                                 IconButton(
+                                                   onPressed: () {}, 
+                                                   icon: Icon(Icons.favorite),
+                                                   color: Colors.red,
+                                                   ),
+                                               ],
+                                             ),
+                                           )
                                           
-                                        ),
-                                        Positioned(
-                                          right: -10,
-                                          top:-25,
-                                          child: Container(
-                                            height: 70,
-                                            width: 70,
-                                            child:ClipRRect(
-                                              
+                                          
+                                          
+                                           
+                                        ],
+                                      ),
+                                      
+                                    ),
+                                    Positioned(
+                                      right: -10,
+                                      top:-25,
+                                      child: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child:ClipRRect(
+                                          
                           borderRadius: BorderRadius.circular(50),
                           
                           child: Image(
@@ -3084,13 +2927,13 @@ void _closeEndDrawer() {
                           ),
                           
                           ),
-                                          //   decoration: BoxDecoration(
-                                          //    color:Colors.blue,
-                                          //   borderRadius: BorderRadius.circular(50),
-                                          // ),
-                                          ),
-                                        )
-                                      ],
+                                      //   decoration: BoxDecoration(
+                                      //    color:Colors.blue,
+                                      //   borderRadius: BorderRadius.circular(50),
+                                      // ),
+                                      ),
+                                    )
+                                  ],
                                     ),
                                     
                                   ),

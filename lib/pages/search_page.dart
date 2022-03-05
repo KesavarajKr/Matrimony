@@ -461,7 +461,7 @@ class _SearchResultState extends State<SearchResult> {
                           child: Row(
                             children: [
                               SizedBox(
-                                width:100,
+                                width:150,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -495,7 +495,7 @@ class _SearchResultState extends State<SearchResult> {
                               ),
                               SizedBox(width: 20),
                               SizedBox(
-                                width:100,
+                                width:150,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -536,7 +536,7 @@ class _SearchResultState extends State<SearchResult> {
                           child: Row(
                             children: [
                               SizedBox(
-                                    width:100,
+                                    width:150,
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -570,7 +570,7 @@ class _SearchResultState extends State<SearchResult> {
                                   ),
                                   SizedBox(width: 20),
                                   SizedBox(
-                                width:100,
+                                width:150,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -609,7 +609,7 @@ class _SearchResultState extends State<SearchResult> {
                           children: [
                             Center(
                               child: SizedBox(
-                                    width:100,
+                                    width:150,
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -648,7 +648,7 @@ class _SearchResultState extends State<SearchResult> {
                             ),
                                 SizedBox(width: 20),
                                 SizedBox(
-                              width:100,
+                              width:150,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,

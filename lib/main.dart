@@ -3,12 +3,18 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:varan_matrimony/pages/dashboard.dart';
 import 'package:varan_matrimony/pages/dashboard.dart';
+import 'package:varan_matrimony/pages/login_screen.dart';
 import 'package:varan_matrimony/pages/profile_completeness.dart';
+import 'pages/data.dart';
+import 'package:provider/provider.dart';
 
 import 'Register.dart';
 
 void main() {
-  runApp(const MyApp());
+    runApp(MultiProvider(
+    providers: [ChangeNotifierProvider <Data1>(create: (_)=> Data1())],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -78,7 +84,7 @@ class MyApp extends StatelessWidget {
                 splashTransition: SplashTransition.fadeTransition,
                 backgroundColor: Colors.transparent,
                 
-                nextScreen: Dashboard(),
+                nextScreen: LoginScreen(),
                 
             ),
             

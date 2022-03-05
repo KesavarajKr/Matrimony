@@ -23,23 +23,26 @@ class _ProfileCompletenessState extends State<ProfileCompleteness> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         
         title:Text('Profile Completeness'),
         toolbarHeight: 100.0,
         centerTitle: true,
         backgroundColor: HexColor('6d1140'),
+        elevation: 0.0,
          shape: RoundedRectangleBorder(
               
                     borderRadius: BorderRadius.only(
                       bottomLeft:Radius.circular(30),
                           bottomRight:Radius.circular(30),
                     )),
+                  
                     
       ),
       body: SingleChildScrollView(
+        
         child: Container(
-          
            decoration: BoxDecoration(
                             
                             gradient: LinearGradient(
@@ -54,10 +57,10 @@ class _ProfileCompletenessState extends State<ProfileCompleteness> {
                                         ),
                     child: Column(
                       children: [
+                        SizedBox(height:100),
                         Card(
                           margin:EdgeInsets.all(20.0),
                           elevation: 10.0,
-                          
                           shape: RoundedRectangleBorder(
                                               side: BorderSide(color: Colors.transparent, ),
                                   borderRadius: BorderRadius.circular(10),
@@ -111,7 +114,6 @@ class _ProfileCompletenessState extends State<ProfileCompleteness> {
                                         Icon(Icons.favorite,color:HexColor('6d1140'),size:35.0),
                                         SizedBox(height:10.0),
                                         Text("About Myself",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 12.0)),
-                                        
                                       ],
                                     ),
                                   ),
